@@ -7,7 +7,7 @@
         <!--Home-->
         <scene sceneID="uaQ-DK-0DO">
             <objects>
-                <tableViewController id="vOV-LK-h0A" sceneMemberID="viewController">
+                <tableViewController id="vOV-LK-h0A" customClass="articlesSummaryTableViewController" customModule="rss_reader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oUx-u8-n96">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="1856" y="378"/>
         </scene>
-        <!--View Controller-->
+        <!--Article Website View Controller-->
         <scene sceneID="uhl-HH-VBR">
             <objects>
-                <viewController id="kPf-8N-5H1" sceneMemberID="viewController">
+                <viewController id="kPf-8N-5H1" customClass="articleWebsiteViewController" customModule="rss_reader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dho-xn-S7L"/>
                         <viewControllerLayoutGuide type="bottom" id="Xyp-px-P05"/>
