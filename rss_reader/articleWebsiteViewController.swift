@@ -29,6 +29,18 @@ class articleWebsiteViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    var i = 0
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        if i == 0{
+            SVProgressHUD.showWithStatus("読み込み中")
+        }
+        i++
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+            SVProgressHUD.dismiss()
+    }
 
     /*
     // MARK: - Navigation
