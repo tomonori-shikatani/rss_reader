@@ -39,6 +39,7 @@
 		340A7B141B45130F00DEFFFC /* rss_readerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rss_readerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		340A7B191B45130F00DEFFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		340A7B1A1B45130F00DEFFFC /* rss_readerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rss_readerTests.swift; sourceTree = "<group>"; };
+		340A7B241B45144B00DEFFFC /* rss_reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rss_reader-Bridging-Header.h"; sourceTree = "<group>"; };
 		340EC7805D64B1F799631762 /* libPods-rss_reader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rss_reader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +94,7 @@
 		340A7B011B45130F00DEFFFC /* rss_reader */ = {
 			isa = PBXGroup;
 			children = (
+				340A7B241B45144B00DEFFFC /* rss_reader-Bridging-Header.h */,
 				340A7B041B45130F00DEFFFC /* AppDelegate.swift */,
 				340A7B061B45130F00DEFFFC /* ViewController.swift */,
 				340A7B081B45130F00DEFFFC /* Main.storyboard */,
@@ -403,6 +405,7 @@
 				INFOPLIST_FILE = rss_reader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rss_reader/rss_reader-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -414,6 +417,7 @@
 				INFOPLIST_FILE = rss_reader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rss_reader/rss_reader-Bridging-Header.h";
 			};
 			name = Release;
 		};
