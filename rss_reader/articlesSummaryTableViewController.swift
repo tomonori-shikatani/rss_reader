@@ -47,7 +47,14 @@ class articlesSummaryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-
+        let articleTitle = cell.viewWithTag(1) as! UILabel
+        let articleURL   = cell.viewWithTag(2) as! UILabel
+        let articleDate  = cell.viewWithTag(3) as! UILabel
+        
+        articleTitle.text = "Apple Music 日本でスタート"
+        articleURL.text   = "http://headlines.yahoo.co.jp/hl?a=20..."
+        articleDate.text  = "7月1日(水)0時32分配信"
+        
         return cell
     }
 

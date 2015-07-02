@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVw-6S-AKy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -17,6 +18,35 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z61-CU-QxJ" id="sd3-9y-IGA">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="記事タイトル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjx-Rr-Lid">
+                                            <rect key="frame" x="13" y="18" width="541" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="記事URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auy-Tj-JU7">
+                                            <rect key="frame" x="13" y="67" width="41" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="記事投稿日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6K-x1-NaD">
+                                            <rect key="frame" x="504" y="67" width="50" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Gjx-Rr-Lid" firstAttribute="top" secondItem="sd3-9y-IGA" secondAttribute="topMargin" constant="10" id="R2o-Zt-EAU"/>
+                                        <constraint firstItem="Auy-Tj-JU7" firstAttribute="leading" secondItem="sd3-9y-IGA" secondAttribute="leadingMargin" constant="5" id="aGx-GM-tg1"/>
+                                        <constraint firstItem="Gjx-Rr-Lid" firstAttribute="leading" secondItem="sd3-9y-IGA" secondAttribute="leadingMargin" constant="5" id="cie-6a-ubX"/>
+                                        <constraint firstItem="A6K-x1-NaD" firstAttribute="bottom" secondItem="sd3-9y-IGA" secondAttribute="bottomMargin" id="evx-ZF-w2w"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Gjx-Rr-Lid" secondAttribute="trailing" constant="5" id="g7s-G3-t7u"/>
+                                        <constraint firstItem="Auy-Tj-JU7" firstAttribute="bottom" secondItem="sd3-9y-IGA" secondAttribute="bottomMargin" id="xUs-a0-xzI"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="A6K-x1-NaD" secondAttribute="trailing" constant="5" id="y2p-Ij-YwI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="kPf-8N-5H1" kind="show" id="Prc-E8-i4p"/>
