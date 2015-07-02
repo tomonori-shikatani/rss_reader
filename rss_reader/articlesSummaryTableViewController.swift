@@ -8,22 +8,74 @@
 
 import UIKit
 
-class articlesSummaryTableViewController: UITableViewController {
+class articlesSummaryTableViewController: UITableViewController, MWFeedParserDelegate {
+    
+    
+    var items = [MWFeedItem]()
 
+    //        viewDidLoad
+    //        ・View が初めて呼び出される時に1回だけ呼ばれる。
+    //        ・アプリ起動後に初めて当Viewが表示された場合に1度だけ呼ばれる。
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //parserをcreateして、delegateして、initiate
+                let feedURL = NSURL(string: "http://news.nicovideo.jp/ranking/hot?rss=2.0")
+                let feedParser = MWFeedParser(feedURL: feedURL!)
+                feedParser.delegate = self
+                feedParser.parse()
+        
     }
 
+    //       viewWillAppear
+    //    　・View が表示される直前に呼ばれるメソッド
+    //    　・タブ等の切り替え等により、画面に表示されるたびに呼び出される。
+    //    　・タブが切り替わるたびに何度でも呼ばれる。
+    
+    //    override func viewWillAppear(animated: Bool) {
+    //        super.viewWillAppear(animated)
+    //
+    //        let feedURL = NSURL(string: "http://news.nicovideo.jp/ranking/hot?rss=2.0")
+    //        let feedParser = MWFeedParser(feedURL: feedURL!)
+    //        feedParser.delegate = self
+    //        feedParser.parse()
+    //
+    //    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func feedParserDidStart(parser: MWFeedParser!) {
+        self.items = [MWFeedItem]()
+        
+    }
+    
+    func feedParserDidFinish(parser: MWFeedParser!) {
+//        self.tableView.reloadData()
+    }
+        
+    
+    func feedParser(parser: MWFeedParser!, didParseFeedInfo info: MWFeedInfo!) {
+        println(info)
+        self.title = info.title
+    }
+    
+    func feedParser(parser: MWFeedParser!, didParseFeedItem item: MWFeedItem!) {
+        println(item)
+        self.items.append(item)
+    }
+    
+    
 
     // MARK: - Table view data source
 
@@ -36,13 +88,14 @@ class articlesSummaryTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        return self.items.count
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 88
     }
-        
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! UITableViewCell
 
@@ -51,14 +104,23 @@ class articlesSummaryTableViewController: UITableViewController {
         let articleURL   = cell.viewWithTag(2) as! UILabel
         let articleDate  = cell.viewWithTag(3) as! UILabel
         
-        articleTitle.text = "Apple Music 日本でスタート"
-        articleURL.text   = "http://headlines.yahoo.co.jp/hl?a=20..."
-        articleDate.text  = "7月1日(水)0時32分配信"
+        let item = self.items[indexPath.row] as MWFeedItem
+
+        articleTitle.text = item.title
+        articleURL.text   = item.link
+        articleDate.text  = dateFormatter(item.date)
         
         return cell
     }
 
-
+    // NSDate型からNSString型への変換メソッド
+    func dateFormatter(date: NSDate) -> String{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja-JP")
+        dateFormatter.dateFormat = "M月d日HH時mm分"
+        return dateFormatter.stringFromDate(date)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -97,12 +159,11 @@ class articlesSummaryTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-        let nextVC = segue.destinationViewController as! articleWebsiteViewController
-        nextVC.articleURL = "http://headlines.yahoo.co.jp/hl?a=20150701-00000015-zdn_n-sci"
-        
-    }
-
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        // Get the new view controller using [segue destinationViewController].
+//        // Pass the selected object to the new view controller.
+//        let nextVC = segue.destinationViewController as! articleWebsiteViewController
+//        nextVC.articleURL =
+//        
+//    }
 }

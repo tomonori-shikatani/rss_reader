@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8F1B2B6B-D9F8-4FBC-9138-EDEB0B5BDD6F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>rss_reader</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3DF599AF809E1245BC9FB95D25D6E5F3761F163E</key>
+		<string>https://github.com/tomonori-shikatani/rss_reader.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>rss_reader.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3DF599AF809E1245BC9FB95D25D6E5F3761F163E</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tomonori-shikatani/rss_reader.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3DF599AF809E1245BC9FB95D25D6E5F3761F163E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3DF599AF809E1245BC9FB95D25D6E5F3761F163E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>rss_reader</string>
+		</dict>
+	</array>
+</dict>
+</plist>
