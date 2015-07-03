@@ -49,7 +49,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kPf-8N-5H1" kind="show" id="Prc-E8-i4p"/>
+                                    <segue destination="kPf-8N-5H1" kind="show" identifier="toArticleWebsiteVC" id="Prc-E8-i4p"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

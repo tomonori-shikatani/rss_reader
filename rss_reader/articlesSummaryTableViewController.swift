@@ -121,6 +121,7 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
         return dateFormatter.stringFromDate(date)
     }
     
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -159,11 +160,16 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        // Get the new view controller using [segue destinationViewController].
-//        // Pass the selected object to the new view controller.
-//        let nextVC = segue.destinationViewController as! articleWebsiteViewController
-//        nextVC.articleURL =
-//        
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        if (segue.identifier == "toArticleWebsiteVC"){
+        let nextVC = segue.destinationViewController as! articleWebsiteViewController
+        let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow()!
+        let item = self.items[indexPath.row]
+        let articleURL = item.link
+            nextVC.articleURL = articleURL
+        }
+    
+    }
 }
