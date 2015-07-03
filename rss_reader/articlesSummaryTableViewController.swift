@@ -28,11 +28,18 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         //parserをcreateして、delegateして、initiate
-                let feedURL = NSURL(string: "http://news.nicovideo.jp/ranking/hot?rss=2.0")
-                let feedParser = MWFeedParser(feedURL: feedURL!)
+
+                let feedURL1:String = "http://news.nicovideo.jp/ranking/hot?rss=2.0"
+                let feedURL2:String = "http://news.livedoor.com/topics/rss.xml"
+        
+                let feedArray:[String] = [feedURL1, feedURL2]
+        
+        for url in feedArray{
+                let feedURL = NSURL(string: url)
+                let feedParser = MWFeedParser(feedURL: feedURL)
                 feedParser.delegate = self
                 feedParser.parse()
-        
+        }
     }
 
     //       viewWillAppear
