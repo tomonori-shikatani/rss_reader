@@ -10,78 +10,59 @@ import UIKit
 
 class articlesSummaryTableViewController: UITableViewController, MWFeedParserDelegate {
     
-    
+    let rssArray:[String] = [
+    "http://news.livedoor.com/topics/rss.xml",
+    "http://matome.naver.jp/feed/hot",
+    "http://togetter.com/rss/index"
+    ]
     var items = [MWFeedItem]()
 
-    //        viewDidLoad
-    //        ・View が初めて呼び出される時に1回だけ呼ばれる。
-    //        ・アプリ起動後に初めて当Viewが表示された場合に1度だけ呼ばれる。
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        //parserをcreateして、delegateして、initiate
-
-                let feedURL1:String = "http://news.nicovideo.jp/ranking/hot?rss=2.0"
-                let feedURL2:String = "http://news.livedoor.com/topics/rss.xml"
-        
-                let feedArray:[String] = [feedURL1, feedURL2]
-        
-        for url in feedArray{
-                let feedURL = NSURL(string: url)
-                let feedParser = MWFeedParser(feedURL: feedURL)
-                feedParser.delegate = self
-                feedParser.parse()
+        for mediaURL: String in rssArray{
+            self.parseFeed(mediaURL)
         }
+
     }
 
-    //       viewWillAppear
-    //    　・View が表示される直前に呼ばれるメソッド
-    //    　・タブ等の切り替え等により、画面に表示されるたびに呼び出される。
-    //    　・タブが切り替わるたびに何度でも呼ばれる。
-    
-    //    override func viewWillAppear(animated: Bool) {
-    //        super.viewWillAppear(animated)
-    //
-    //        let feedURL = NSURL(string: "http://news.nicovideo.jp/ranking/hot?rss=2.0")
-    //        let feedParser = MWFeedParser(feedURL: feedURL!)
-    //        feedParser.delegate = self
-    //        feedParser.parse()
-    //
-    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    }
+    
+    func parseFeed(URL: String){
+        
+        var request:NSURL = NSURL(string: URL)!
+        var feedParser = MWFeedParser(feedURL: request)
+        feedParser.delegate = self
+        feedParser.parse()
+
     }
     
     func feedParserDidStart(parser: MWFeedParser!) {
-        self.items = [MWFeedItem]()
         
     }
-    
+        
     func feedParserDidFinish(parser: MWFeedParser!) {
-//        self.tableView.reloadData()
+
     }
-        
+
     
     func feedParser(parser: MWFeedParser!, didParseFeedInfo info: MWFeedInfo!) {
-        println(info)
-        self.title = info.title
+
     }
     
     func feedParser(parser: MWFeedParser!, didParseFeedItem item: MWFeedItem!) {
-        println(item)
+        
         self.items.append(item)
+        
     }
     
+    
+
     
 
     // MARK: - Table view data source
