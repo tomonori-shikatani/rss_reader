@@ -61,6 +61,11 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
         
     }
     
+    func feedParser(parser: MWFeedParser!, didFailWithError error: NSError!) {
+        println("MWFeedParser error:")
+        println(error.localizedDescription)
+    }
+    
     
 
     
