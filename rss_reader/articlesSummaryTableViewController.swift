@@ -22,7 +22,7 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //プル&リリースで更新（https://github.com/dekatotoro/PullToRefreshSwift）
         self.tableView.addPullToRefresh({ [weak self] in
             // refresh code
             
@@ -30,6 +30,7 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
             self?.tableView.stopPullToRefresh()
             })
         
+        //各RSSフィードごとにparserを呼び出し
         for mediaURL: String in rssArray{
             self.parseFeed(mediaURL)
         }
@@ -43,7 +44,7 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
     }
     
     func parseFeed(URL: String){
-        
+        //パースの開始
         var request:NSURL = NSURL(string: URL)!
         var feedParser = MWFeedParser(feedURL: request)
         feedParser.delegate = self
@@ -56,7 +57,7 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
     }
         
     func feedParserDidFinish(parser: MWFeedParser!) {
-        //投稿日時順にソート（降順）
+        //パースしたitemを投稿日時順にソート（降順）
         items.sort { (article1, article2) -> Bool in
             let cmp = article1.date.compare(article2.date)
             if cmp == NSComparisonResult.OrderedDescending {return true}
@@ -122,7 +123,7 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
         return cell
     }
 
-    // NSDate型からNSString型への変換メソッド
+    // item投稿日時をNSDate型からNSString型へ変換
     func dateFormatter(date: NSDate) -> String{
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "ja-JP")
