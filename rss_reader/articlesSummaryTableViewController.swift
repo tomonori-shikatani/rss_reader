@@ -12,7 +12,7 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
     
     let rssArray:[String] = [
     "http://news.livedoor.com/topics/rss.xml",
-    "http://matome.naver.jp/feed/hot",
+    "http://natalie.mu/owarai/feed/news",
     "http://togetter.com/rss/index"
     ]
     var items = [MWFeedItem]()
@@ -47,6 +47,12 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
     }
         
     func feedParserDidFinish(parser: MWFeedParser!) {
+        //投稿日時順にソート（降順）
+        items.sort { (article1, article2) -> Bool in
+            let cmp = article1.date.compare(article2.date)
+            if cmp == NSComparisonResult.OrderedDescending {return true}
+            return false
+        }
 
     }
 
@@ -62,6 +68,7 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
     }
     
     func feedParser(parser: MWFeedParser!, didFailWithError error: NSError!) {
+        //パースエラー時にエラー内容を表示
         println("MWFeedParser error:")
         println(error.localizedDescription)
     }
