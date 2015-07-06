@@ -12,14 +12,23 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
     
     let rssArray:[String] = [
     "http://news.livedoor.com/topics/rss.xml",
-    "http://natalie.mu/owarai/feed/news",
-    "http://togetter.com/rss/index"
+    "http://feeds.feedburner.com/hatena/b/hotentry",
+    "http://news.nicovideo.jp/ranking/comment/?rss=2.0",
+    "http://togetter.com/rss/index",
+    "http://matome.naver.jp/feed/hot"
     ]
     var items = [MWFeedItem]()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.addPullToRefresh({ [weak self] in
+            // refresh code
+            
+            self?.tableView.reloadData()
+            self?.tableView.stopPullToRefresh()
+            })
         
         for mediaURL: String in rssArray{
             self.parseFeed(mediaURL)
