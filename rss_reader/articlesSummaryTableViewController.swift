@@ -146,9 +146,10 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
     }
     
     func feedParser(parser: MWFeedParser!, didParseFeedItem item: MWFeedItem!) {
-        
+        //リストは最大50記事
+        if (self.items.count < 50){
         self.items.append(item)
-        
+        }
     }
     
     func feedParser(parser: MWFeedParser!, didFailWithError error: NSError!) {
@@ -189,9 +190,32 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
         let articleDate  = cell.viewWithTag(3) as! UILabel
         
         let item = self.items[indexPath.row] as MWFeedItem
-
-        articleTitle.text = item.title
-        articleURL.text   = item.link
+        
+        //記事タイトル40文字以上以降切り捨て
+        if (count(item.title) > 40){
+            let tmpTitle = item.title
+            let itemTitleTrunscate = tmpTitle.substringToIndex(advance(tmpTitle.startIndex, 40))
+            let tailString = "..."
+            articleTitle.text = itemTitleTrunscate + tailString
+        }
+        else
+        {
+            articleTitle.text = item.title
+        }
+        
+        //記事URL
+        if (count(item.link) > 30){
+            let tmpLink = item.link
+            let itemLinkTrunscate = tmpLink.substringToIndex(advance(tmpLink.startIndex, 30))
+            let tailString = "..."
+            articleURL.text = itemLinkTrunscate + tailString
+        }
+        else
+        {
+            articleURL.text = item.link
+        }
+        
+        //記事投稿日
         articleDate.text  = dateFormatter(item.date)
         
         return cell
