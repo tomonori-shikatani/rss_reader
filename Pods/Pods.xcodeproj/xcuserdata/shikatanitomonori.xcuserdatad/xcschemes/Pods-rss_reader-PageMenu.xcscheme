@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D2338A4CF6A9ABA3AC635BC"
-               BuildableName = "SVProgressHUD.framework"
-               BlueprintName = "Pods-rss_reader-SVProgressHUD"
+               BlueprintIdentifier = "149B4340B0ADD70844A0805A"
+               BuildableName = "PageMenu.framework"
+               BlueprintName = "Pods-rss_reader-PageMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -18,7 +18,8 @@
 		3481F15F1B4A5C3000902804 /* PullToRefreshOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3481F15C1B4A5C3000902804 /* PullToRefreshOption.swift */; };
 		3481F1601B4A5C3000902804 /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3481F15D1B4A5C3000902804 /* PullToRefreshView.swift */; };
 		3481F1611B4A5C3000902804 /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3481F15E1B4A5C3000902804 /* UIScrollViewExtension.swift */; };
-		476138C88A41F2077C31DA03 /* libPods-rss_reader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 340EC7805D64B1F799631762 /* libPods-rss_reader.a */; };
+		34F1D55D1B4D1D1200B72B09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F1D55C1B4D1D1200B72B09 /* ViewController.swift */; };
+		B48F44DC48B4494DC5346894 /* Pods_rss_reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FEB18A34DB067E15DA8266 /* Pods_rss_reader.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00FEB18A34DB067E15DA8266 /* Pods_rss_reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rss_reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0413E4CD093CCFA1FB8FFED4 /* Pods-rss_reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rss_reader.release.xcconfig"; path = "Pods/Target Support Files/Pods-rss_reader/Pods-rss_reader.release.xcconfig"; sourceTree = "<group>"; };
 		2D15C3FA5D5CB37C865949C4 /* Pods-rss_reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rss_reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rss_reader/Pods-rss_reader.debug.xcconfig"; sourceTree = "<group>"; };
 		340A7AFF1B45130F00DEFFFC /* rss_reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rss_reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,11 +48,11 @@
 		340A7B241B45144B00DEFFFC /* rss_reader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rss_reader-Bridging-Header.h"; sourceTree = "<group>"; };
 		340A7B251B4516BE00DEFFFC /* articlesSummaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = articlesSummaryTableViewController.swift; sourceTree = "<group>"; };
 		340A7B271B4516F600DEFFFC /* articleWebsiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = articleWebsiteViewController.swift; sourceTree = "<group>"; };
-		340EC7805D64B1F799631762 /* libPods-rss_reader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rss_reader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3481F15A1B4A5BF800902804 /* pulltorefresharrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulltorefresharrow.png; sourceTree = "<group>"; };
 		3481F15C1B4A5C3000902804 /* PullToRefreshOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshOption.swift; sourceTree = "<group>"; };
 		3481F15D1B4A5C3000902804 /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
 		3481F15E1B4A5C3000902804 /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
+		34F1D55C1B4D1D1200B72B09 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				476138C88A41F2077C31DA03 /* libPods-rss_reader.a in Frameworks */,
+				B48F44DC48B4494DC5346894 /* Pods_rss_reader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +109,7 @@
 				340A7B241B45144B00DEFFFC /* rss_reader-Bridging-Header.h */,
 				340A7B041B45130F00DEFFFC /* AppDelegate.swift */,
 				340A7B081B45130F00DEFFFC /* Main.storyboard */,
+				34F1D55C1B4D1D1200B72B09 /* ViewController.swift */,
 				3481F15A1B4A5BF800902804 /* pulltorefresharrow.png */,
 				3481F15C1B4A5C3000902804 /* PullToRefreshOption.swift */,
 				3481F15D1B4A5C3000902804 /* PullToRefreshView.swift */,
@@ -148,7 +151,7 @@
 		E2E3D6108BDF1844DE8EEB23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				340EC7805D64B1F799631762 /* libPods-rss_reader.a */,
+				00FEB18A34DB067E15DA8266 /* Pods_rss_reader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				340A7AFC1B45130F00DEFFFC /* Frameworks */,
 				340A7AFD1B45130F00DEFFFC /* Resources */,
 				CB92405B9EFE8EB762B39026 /* Copy Pods Resources */,
+				ED4244F875F058375A125B69 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,6 +286,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rss_reader/Pods-rss_reader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ED4244F875F058375A125B69 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rss_reader/Pods-rss_reader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -293,6 +312,7 @@
 				340A7B261B4516BE00DEFFFC /* articlesSummaryTableViewController.swift in Sources */,
 				340A7B051B45130F00DEFFFC /* AppDelegate.swift in Sources */,
 				340A7B281B4516F600DEFFFC /* articleWebsiteViewController.swift in Sources */,
+				34F1D55D1B4D1D1200B72B09 /* ViewController.swift in Sources */,
 				3481F1601B4A5C3000902804 /* PullToRefreshView.swift in Sources */,
 				3481F1611B4A5C3000902804 /* UIScrollViewExtension.swift in Sources */,
 			);

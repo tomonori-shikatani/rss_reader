@@ -9,8 +9,6 @@
 #ifndef rss_reader_rss_reader_Bridging_Header_h
 #define rss_reader_rss_reader_Bridging_Header_h
 
-#import <SVProgressHUD.h>
-#import <MWFeedParser.h>
 
 
 #endif

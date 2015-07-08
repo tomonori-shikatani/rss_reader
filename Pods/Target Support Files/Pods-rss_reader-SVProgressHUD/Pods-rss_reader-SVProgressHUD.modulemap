@@ -1,0 +1,6 @@
+framework module SVProgressHUD {
+  umbrella header "Pods-rss_reader-SVProgressHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}

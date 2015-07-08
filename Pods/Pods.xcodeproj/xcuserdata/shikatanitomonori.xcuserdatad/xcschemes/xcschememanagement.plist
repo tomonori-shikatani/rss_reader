@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-rss_reader-PageMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-rss_reader-SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1073A0BBC885BAAF9A37CE53</key>
+		<key>149B4340B0ADD70844A0805A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>19FBE957AE9E665F316102F2</key>
+		<key>2EF13E3A2ABFBFBE2CE172CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DDE8918A6F3F26A0A7FD1332</key>
+		<key>6D2338A4CF6A9ABA3AC635BC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9CA6DA3231C26DFADE2C165</key>
 		<dict>
 			<key>primary</key>
 			<true/>

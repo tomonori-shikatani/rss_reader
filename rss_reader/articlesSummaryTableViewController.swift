@@ -7,16 +7,63 @@
 //
 
 import UIKit
+import MWFeedParser
 
 class articlesSummaryTableViewController: UITableViewController, MWFeedParserDelegate {
     
-    let rssArray:[String] = [
-    "http://news.livedoor.com/topics/rss.xml",
-    "http://feeds.feedburner.com/hatena/b/hotentry",
-    "http://news.nicovideo.jp/ranking/comment/?rss=2.0",
-    "http://togetter.com/rss/index",
-    "http://matome.naver.jp/feed/hot"
+    let rssArray1:[String] = [
+        "http://news.livedoor.com/topics/rss.xml",
+        "http://feeds.feedburner.com/hatena/b/hotentry",
+        "http://news.nicovideo.jp/ranking/comment/?rss=2.0",
+        "http://togetter.com/rss/index",
+        "http://matome.naver.jp/feed/hot"
     ]
+    
+    
+    let rssArray2:[String] = [
+        "http://alfalfalfa.com/index.rdf",
+        "http://blog.livedoor.jp/kinisoku/index.rdf",
+        "http://blog.livedoor.jp/chihhylove/index.rdf",
+        "http://jin115.com/index.rdf",
+        "http://blog.esuteru.com/index.rdf"
+    ]
+    
+    
+    let rssArray3:[String] = [
+        "http://japan.techinsight.jp/index.xml",
+        "http://natalie.mu/owarai/feed/news",
+        "http://news.livedoor.com/topics/rss/ent.xml",
+        "http://blog.livedoor.jp/sky_wing2010-geinou/index.rdf",
+        "http://gossip1.net/index.rdf"
+
+    ]
+    
+    let rssArray4:[String] = [
+        "http://www.famitsu.com/rss/fcom_all.rdf",
+        "http://gamebiz.jp/?feed=rss",
+        "http://dengekionline.com/cate/11/rss.xml",
+        "http://www.4gamer.net/rss/index.xml",
+        "http://www.gamespark.jp/rss/index.rdf"
+
+    ]
+    
+    
+    let rssArray5:[String] = [
+        "http://yaraon-blog.com/feed",
+        "http://kai-you.net/contents/feed.rss",
+        "http://natalie.mu/comic/feed/news",
+        "http://animeanime.jp/rss/index.rdf",
+        "https://akiba-souken.com/feed/all/"
+
+    ]
+    
+    let rssArray6:[String] = [
+        "http://feed.rssad.jp/rss/spa/feed",
+        "http://wpb.shueisha.co.jp/feed/",
+        "http://rss.rssad.jp/rss/cyzo/atom.xml"
+    ]
+    
+
     var items = [MWFeedItem]()
 
     
@@ -31,10 +78,37 @@ class articlesSummaryTableViewController: UITableViewController, MWFeedParserDel
             })
         
         //各RSSフィードごとにparserを呼び出し
-        for mediaURL: String in rssArray{
-            self.parseFeed(mediaURL)
+        if (self.title == "話題"){
+            for mediaURL: String in rssArray1{
+                self.parseFeed(mediaURL)
+            }
         }
-
+        else if(self.title == "注目"){
+            for mediaURL: String in rssArray2{
+                self.parseFeed(mediaURL)
+            }
+        }
+        else if(self.title == "芸能"){
+            for mediaURL: String in rssArray3{
+                self.parseFeed(mediaURL)
+            }
+        }
+        else if(self.title == "ゲーム"){
+            for mediaURL: String in rssArray4{
+                self.parseFeed(mediaURL)
+            }
+        }
+        else if(self.title == "マンガ"){
+            for mediaURL: String in rssArray5{
+                self.parseFeed(mediaURL)
+            }
+        }
+        else{
+            for mediaURL: String in rssArray6{
+                self.parseFeed(mediaURL)
+            }
+        }
+        
     }
 
     
