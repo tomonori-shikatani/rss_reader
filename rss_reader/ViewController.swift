@@ -47,7 +47,8 @@ class ViewController: UIViewController {
             .MenuItemSeparatorWidth(4.3),
             .UseMenuLikeSegmentedControl(true),
             .MenuItemSeparatorPercentageHeight(0.1),
-            .SelectionIndicatorColor(UIColor.cyanColor())
+            .ScrollMenuBackgroundColor(UIColor.grayColor()),
+            .SelectionIndicatorColor(UIColor.orangeColor())
         ]
         
         pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, 20.0, self.view.frame.width, self.view.frame.height), pageMenuOptions: parameters)
